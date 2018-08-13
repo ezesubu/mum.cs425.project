@@ -26,6 +26,7 @@ public class Car {
     public Car() {
     }
 
+
     public Car(String brand, String model, String color, Long num_of_seat, String imageUrl, Category category, String status) {
         this.brand = brand;
         this.model = model;

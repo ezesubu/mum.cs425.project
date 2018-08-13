@@ -2,6 +2,7 @@ package mum.swe.CRMSSpringApp.controller.web;
 
 import mum.swe.CRMSSpringApp.model.Car;
 import mum.swe.CRMSSpringApp.service.CarService;
+import mum.swe.CRMSSpringApp.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +19,18 @@ import java.util.List;
 @Controller
 public class CarController {
 
+
+
+
     @Autowired
     private CarService carService;
 
-    @RequestMapping(value = "/mycars", method = RequestMethod.GET)
+
+    @Autowired
+    private CategoryService categoryService;
+
+
+    @RequestMapping(value = "/car", method = RequestMethod.GET)
     public ModelAndView cars() {
         List<Car> cars = carService.findAll();
         ModelAndView modelAndView = new ModelAndView();
@@ -30,13 +39,14 @@ public class CarController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/mycar", method = RequestMethod.GET)
+    @RequestMapping(value = "/car/new", method = RequestMethod.GET)
     public String create(Model model) {
+        model.addAttribute("categories", categoryService.findAll());
         model.addAttribute("car", new Car());
         return "car/edit";
     }
 
-    @RequestMapping(value = "/mycar", method = RequestMethod.POST)
+    @RequestMapping(value = "/car", method = RequestMethod.POST)
     public String edit(@Valid @ModelAttribute("car") Car car,
                        BindingResult result, Model model) {
 
@@ -45,18 +55,19 @@ public class CarController {
             return "car/edit";
         }
         car = carService.save(car);
-        return "redirect:/cars";
+        return "redirect:/car";
     }
 
-    @RequestMapping(value = "/mycar/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/car/edit/{id}", method = RequestMethod.GET)
     public String view(@PathVariable Long id, Model model) {
+        model.addAttribute("categories", categoryService.findAll());
         model.addAttribute("car", carService.findById(id));
         return "car/edit";
     }
 
-    @RequestMapping(value = "/mycar/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/car/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable Long id, Model model) {
         carService.delete(id);
-        return "redirect:/mycars";
+        return "redirect:/car";
     }
 }
