@@ -3,27 +3,22 @@ var angular = require('angular');
 
 require('../css/login.css')
 
-function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc) {
+function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc,$auth,SweetAlert) {
   $scope.progress = false;
-  $scope.title = 'client'
+  $scope.title = 'client';
+
   $scope.copyrightYear = new Date().getFullYear();
   LoginSvc.logout();
   $scope.submitForm = function(isValid){
     if ( isValid ) {
-      $scope.progress = true;
-      LoginSvc.login($scope.username, $scope.password)
-        .then(res => {
-          $scope.progress = false;
-          if ( res.authenticated ) {
-            $state.go('home');
-          } else {
-            $scope.message = res.message;
-          }
-        })
-        .catch(err => {
-          $scope.progress = false;
-          $scope.message = err;
-        })
+        $scope.progress = true;
+        $auth.login({username: $scope.username, password: $scope.password}).then(function () {
+           $state.go('home');
+        },
+        function () {
+            SweetAlert.swal("Error", "User o Password incorrect", "error");
+        });
+        $scope.progress = false;
     }
   }
 }
@@ -40,7 +35,9 @@ loginCtrl.$inject = [
   '$sessionStorage',
   '$state',
   '$filter',
-  'LoginSvc'
+  'LoginSvc',
+  '$auth',
+  'SweetAlert'
 ]
 
 function routeConfig($stateProvider) {
