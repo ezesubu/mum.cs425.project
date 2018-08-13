@@ -1,5 +1,8 @@
 package mum.swe.CRMSSpringApp.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 
 
@@ -8,26 +11,27 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String brand;
     private String model;
     private String color;
+    private String imageUrl;
 
     private Long num_of_seat;
 
     @ManyToOne
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Car.class)
     private Category category;
-
     private String status; //(Ahmed we have it as string not number) vvalues are 0 , 1 , 2 ( Metting about it 04 08 2018)
 
     public Car() {
     }
 
-    public Car(String brand, String model, String color, Long num_of_seat, Category category, String status) {
+    public Car(String brand, String model, String color, Long num_of_seat, String imageUrl, Category category, String status) {
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.num_of_seat = num_of_seat;
+        this.imageUrl = imageUrl;
         this.category = category;
         this.status = status;
     }
@@ -75,6 +79,15 @@ public class Car {
 
     public void setNum_of_seat(Long num_of_seat) {
         this.num_of_seat = num_of_seat;
+    }
+
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Category getCategory() {
