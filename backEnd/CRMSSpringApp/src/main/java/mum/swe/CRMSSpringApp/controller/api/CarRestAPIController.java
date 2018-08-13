@@ -11,14 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class RestAPIController {
+public class CarRestAPIController {
     @Autowired
     private CarService carService;
 
     @Autowired
     private CategoryService categoryService;
-
-    // Car
 
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     @ResponseBody
@@ -35,7 +33,11 @@ public class RestAPIController {
     @GetMapping(value = "/cars/{id}")
     public @ResponseBody
     Car findCarById(@PathVariable Long id) {
-        return carService.findById(id);
+    	Car car = carService.findById(id);
+    	if(car == null) {
+    		return  new Car();
+    	}
+        return car;
     }
 
     @DeleteMapping(value = "/cars/{id}")
@@ -44,19 +46,10 @@ public class RestAPIController {
         carService.delete(id);
         return true;
     }
-
-    // Category
-
-    @RequestMapping(value = "/categories")
-    @ResponseBody
-    public List<Category> getAllCategories() {
-        return categoryService.findAll();
-    }
-	
-	/*	@PutMapping(value = "/updatecar/{id}")
-	public boolean updateCar(@PathVariable Long id, @RequestBody Car newCar) {
-		Car oldCar = carService.findById(id);
-		carService.updateCar(oldCar, newCar);
+    
+	@PutMapping(value = "/cars")
+	public boolean updateCar(@RequestBody Car car) {
+		carService.save(car);
 		return true;
-	}*/
+	}
 }
