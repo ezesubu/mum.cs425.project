@@ -93,8 +93,29 @@ public class Car {
         this.category = category;
     }
 
+
     public String getStatus() {
-        return status;
+        return  this.status;
+    }
+    public String translateStatus() {
+
+        if (this.status==null)
+        {
+            return null;
+        }
+        switch (this.status)
+        {
+                case "0" :
+                    return "Available";
+                case "1" :
+                    return "Reserved";
+                case "2" :
+                    return "Deleted";
+
+
+        }
+        return "";
+
     }
 
     public void setStatus(String status) {

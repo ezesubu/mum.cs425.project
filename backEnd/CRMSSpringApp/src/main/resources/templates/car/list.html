@@ -26,7 +26,7 @@
             <td th:text="${car.model}"></td>
             <td th:text="${car.color}"></td>
             <td th:text="${car.num_of_seat}"></td>
-            <td th:text="${car.status}"></td>
+            <td th:text="${car.translateStatus()}"></td>
             <td th:text="${car.category.name}"></td>
             <td>
             <a th:href="@{'/car/edit/' + ${car.id}}">Edit</a>&nbsp;
