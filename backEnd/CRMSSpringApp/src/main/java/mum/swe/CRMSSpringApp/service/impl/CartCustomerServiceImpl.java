@@ -3,15 +3,14 @@ package mum.swe.CRMSSpringApp.service.impl;
 import mum.swe.CRMSSpringApp.model.Car;
 import mum.swe.CRMSSpringApp.repository.CarRepository;
 import mum.swe.CRMSSpringApp.service.CarService;
+import mum.swe.CRMSSpringApp.service.CartCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("carService")
-public class CarServiceImpl implements CarService {
+@Service("cart")
+public class CartCustomerServiceImpl implements CarService,CartCustomerService {
 
     @Autowired
     CarRepository carRepository;

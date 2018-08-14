@@ -11,14 +11,31 @@
   </div>
   <div class="card-columns">
     <div class="card" style="width: 18rem;" ng-repeat="car in cars">
-      <img class="card-img-top" src="https://loremflickr.com/150/150/car" alt="Car Image">
+      <img class="card-img-top" src="{{car.imageUrl}}" alt="Car Image">
       <div class="card-body">
         <h4 class="card-title">{{car.brand}}</h4>
         <p class="card-text">Model: {{car.model}}</p>
         <p class="card-text">Status: {{car.status}}</p>
         <p class="card-text">Seats: {{car.num_of_seat}}</p>
-        <a href="#" class="btn btn-primary">Select Car</a>
+        <button ng-click="addToCart(car.id)" class="btn btn-primary">Select Car</button>
       </div>
     </div>
   </div>
 </main><!-- /.container -->
+<script type="text/ng-template" id="stackedModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <ul>
+      <li ng-repeat="item in $ctrl.items">
+        <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+      </li>
+    </ul>
+    Selected: <b>{{ $ctrl.selected.item }}</b>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</script>

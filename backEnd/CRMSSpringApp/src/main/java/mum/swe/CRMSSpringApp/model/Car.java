@@ -21,7 +21,12 @@ public class Car {
     public Car() {
     }
 
+<<<<<<< HEAD
     public Car(String brand, String model, String color, Long num_of_seat, Category category, String status) {
+=======
+
+    public Car(String brand, String model, String color, Long num_of_seat, String imageUrl, Category category, String status) {
+>>>>>>> 38e37bea5d6b54f0d61226560f4b65915bfd3213
         this.brand = brand;
         this.model = model;
         this.color = color;
