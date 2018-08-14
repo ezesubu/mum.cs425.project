@@ -1,0 +1,33 @@
+<!DOCTYPE html >
+<html layout:decorator="shared/base"
+>
+<div class="content" layout:fragment="content">
+    <h2>customer</h2> <br/>
+    <a href="/customer/new">Create a Customer</a>
+    <a href="/home" id="">Back to home</a><br/><br/>
+    <table class="table table-striped">
+        <thead>
+        <th>Id</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>username</th>
+        <th>accountNumber</th>
+        <th>balance</th>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.username}"></td>
+            <td th:text="${customer.accountNumber}"></td>
+            <td th:text="${customer.balance}"></td>
+
+            <td>
+                <a th:href="@{'/customer/' + ${customer.id}}">Edit</a>&nbsp;
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
