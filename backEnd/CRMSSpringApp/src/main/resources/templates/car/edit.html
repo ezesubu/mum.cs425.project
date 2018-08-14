@@ -7,8 +7,7 @@
     <h2>Car Information</h2>
     <br/>
 
-    <form class="form-horizontal" action="/car" method="POST"
-          th:object="${car}">
+    <form class="form-horizontal" action="/car" method="POST" th:object="${car}">
         <input type="hidden" name="id" th:value="${car.id}"/>
         <div class="form-group">
             <label class="control-label col-sm-2" for="brand">Brand:</label> <label
@@ -91,5 +90,5 @@
     </form>
     <br/>
 
-    <a href="/cars">Car List</a>
+    <a href="/car">Car List</a>
 </div>
