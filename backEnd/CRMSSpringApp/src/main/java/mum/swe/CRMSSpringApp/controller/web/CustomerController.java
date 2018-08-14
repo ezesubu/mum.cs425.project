@@ -2,7 +2,8 @@ package mum.swe.CRMSSpringApp.controller.web;
 
 
 import mum.swe.CRMSSpringApp.model.Category;
-import mum.swe.CRMSSpringApp.service.CategoryService;
+import mum.swe.CRMSSpringApp.model.Customer;
+import mum.swe.CRMSSpringApp.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,51 +22,51 @@ public class CustomerController {
 
 
     @Autowired
-    private CategoryService categoryService;
+    private CustomerRepository customerRepository;
 
 
-    @RequestMapping(value = "/category/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/customer/list", method = RequestMethod.GET)
     public ModelAndView list() {
-        List<Category> category = categoryService.findAll();
+        List<Customer> customers = customerRepository.findAll();
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("categories", category);
-        modelAndView.setViewName("category/list");
+        modelAndView.addObject("customers", customers);
+        modelAndView.setViewName("customer/list");
 
         return modelAndView;
     }
 
-    @RequestMapping(value = "/category/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/customer/new", method = RequestMethod.GET)
     public String create(Model model) {
 
 
-        model.addAttribute("category", new Category());
+        model.addAttribute("customer", new Customer());
 
 
-        return "category/edit";
+        return "customer/edit";
     }
 
-    @RequestMapping(value = "/category", method = RequestMethod.POST)
-    public String edit(@Valid @ModelAttribute("category") Category category,
+    @RequestMapping(value = "/customer", method = RequestMethod.POST)
+    public String edit(@Valid @ModelAttribute("customer") Customer customer,
                        BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             model.addAttribute("errors", result.getAllErrors());
-            return "category/edit";
+            return "customer/edit";
         }
-        category = categoryService.save(category);
-        return "redirect:/category/list";
+        customer = customerRepository.save(customer);
+        return "redirect:/customer/list";
     }
 
-    @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
     public String view(@PathVariable Long id, Model model) {
 
-        model.addAttribute("category", categoryService.findById(id));
-        return "category/edit";
+        model.addAttribute("customer", customerRepository.findById(id).get());
+        return "customer/edit";
     }
 
-    @RequestMapping(value = "/category/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/customer/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable Long id, Model model) {
-        categoryService.delete(id);
-        return "redirect:/category";
+        customerRepository.delete(this.customerRepository.findById(id).get());
+        return "redirect:/customer";
     }
 }
