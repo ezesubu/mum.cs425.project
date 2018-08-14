@@ -10,8 +10,8 @@ public class Car {
     private Long id;
     private String brand;
     private String model;
+    private String imageUrl;
     private String color;
-
     private Long num_of_seat;
 
     @ManyToOne
@@ -21,22 +21,27 @@ public class Car {
     public Car() {
     }
 
-<<<<<<< HEAD
-    public Car(String brand, String model, String color, Long num_of_seat, Category category, String status) {
-=======
-
     public Car(String brand, String model, String color, Long num_of_seat, String imageUrl, Category category, String status) {
->>>>>>> 38e37bea5d6b54f0d61226560f4b65915bfd3213
+
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.num_of_seat = num_of_seat;
         this.category = category;
         this.status = status;
+        this.imageUrl=imageUrl;
+        
     }
 
+    public String getImageUrl() {
+		return imageUrl;
+	}
 
-    public Long getId() {
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public Long getId() {
         return id;
     }
 
