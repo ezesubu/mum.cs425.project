@@ -3,7 +3,7 @@ var angular = require('angular');
 
 require('../css/login.css')
 
-function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc,$auth,SweetAlert) {
+function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc,$auth, $uibModal ) {
   $scope.progress = false;
   $scope.title = 'client';
 
@@ -16,7 +16,7 @@ function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc,$auth,Swee
            $state.go('home');
         },
         function () {
-            SweetAlert.swal("Error", "User o Password incorrect", "error");
+            console.log("Error", "User o Password incorrect", "error");
         });
         $scope.progress = false;
     }
@@ -37,7 +37,7 @@ loginCtrl.$inject = [
   '$filter',
   'LoginSvc',
   '$auth',
-  'SweetAlert'
+  '$uibModal'
 ]
 
 function routeConfig($stateProvider) {

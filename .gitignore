@@ -23,3 +23,5 @@
 hs_err_pid*
 /backEnd/CRMSSpringApp/.mvn
 /backEnd/CRMSSpringApp/.idea
+.idea/
+
