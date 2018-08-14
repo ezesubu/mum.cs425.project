@@ -9,7 +9,7 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "customers", path = "customers")
 public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long> {
-
+    Customer findByUsername(String username);
     List<Customer> findByFirstName(@Param("firstName") String firstName);
 
 }

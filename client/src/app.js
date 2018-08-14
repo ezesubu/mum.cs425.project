@@ -12,6 +12,8 @@ require('font-awesome/css/font-awesome.css')
 require('popper.js/dist/popper.js');
 require('jquery/dist/jquery.js');
 require('restangular');
+require('satellizer');
+require('angular-sweetalert');
 
 // util
 function importAll(r) {
@@ -19,7 +21,7 @@ function importAll(r) {
 }
 
 // begin module
-angular.module('car', ['ui.router', 'ngStorage', 'restangular']);
+angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'oitozero.ngSweetAlert']);
 
 // app deps
 require('./constants.js');
@@ -33,10 +35,12 @@ function addAuthGuard($rootScope, $location, $sessionStorage){
   // });
 }
 
-function setDefaults($urlRouterProvider, RestangularProvider,carConstants ){
+function setDefaults($urlRouterProvider, RestangularProvider,carConstants , $authProvider){
    $urlRouterProvider.otherwise('/home')
    RestangularProvider.setBaseUrl(carConstants.base_url);
    RestangularProvider.setFullResponse(true);
+   $authProvider.loginUrl = carConstants.base_url + '/login';
+
 }
 
 
@@ -55,7 +59,7 @@ importAll(require.context('./home', true, /.js$/))
 importAll(require.context('./car', true, /.js$/))
 
 angular.module('car')
-  .config(['$urlRouterProvider', 'RestangularProvider', 'carConstants', setDefaults])
+  .config(['$urlRouterProvider', 'RestangularProvider', 'carConstants', '$authProvider', setDefaults])
   .run(['$rootScope', '$location', '$sessionStorage', addAuthGuard])
 /*
 // https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
