@@ -1,10 +1,9 @@
 package mum.swe.CRMSSpringApp.filters;
 
 import com.auth0.jwt.JWT;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import mum.swe.CRMSSpringApp.constants.SecurityConstants;
-import mum.swe.CRMSSpringApp.model.ApplicationUser;
+import mum.swe.CRMSSpringApp.model.Customer;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -14,7 +13,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -37,7 +35,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
             throws AuthenticationException{
         try {
-          ApplicationUser creds = new ObjectMapper().readValue(req.getInputStream(), ApplicationUser.class);
+            Customer creds = new ObjectMapper().readValue(req.getInputStream(), Customer.class);
 
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(creds.getUsername(),

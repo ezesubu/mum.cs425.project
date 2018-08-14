@@ -1,8 +1,7 @@
 package mum.swe.CRMSSpringApp.controller.api;
 
-import mum.swe.CRMSSpringApp.model.ApplicationUser;
-import mum.swe.CRMSSpringApp.repository.ApplicationUserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import mum.swe.CRMSSpringApp.model.Customer;
+import mum.swe.CRMSSpringApp.repository.CustomerRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -10,18 +9,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @RequestMapping("api/users")
 public class UserController {
 
-    private ApplicationUserRepository applicationUserRepository;
+    private CustomerRepository customerRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public UserController(ApplicationUserRepository applicationUserRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.applicationUserRepository = applicationUserRepository;
+    public UserController(CustomerRepository customerRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.customerRepository = customerRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @PostMapping(value = "/sign-up")
-    public void signUp(@RequestBody  ApplicationUser user){
+    public void signUp(@RequestBody Customer user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        applicationUserRepository.save(user);
+        customerRepository.save(user);
     }
 
 

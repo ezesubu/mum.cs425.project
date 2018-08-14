@@ -1,7 +1,7 @@
 package mum.swe.CRMSSpringApp.service;
 
-import mum.swe.CRMSSpringApp.model.ApplicationUser;
-import mum.swe.CRMSSpringApp.repository.ApplicationUserRepository;
+import mum.swe.CRMSSpringApp.model.Customer;
+import mum.swe.CRMSSpringApp.repository.CustomerRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,16 +13,16 @@ import java.util.Collections;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private ApplicationUserRepository applicationUserRepository;
+    private CustomerRepository customerRepository;
 
 
-    public UserDetailsServiceImpl(ApplicationUserRepository applicationUserRepository) {
-        this.applicationUserRepository = applicationUserRepository;
+    public UserDetailsServiceImpl(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        ApplicationUser applicationUser = applicationUserRepository.findByUsername(username);
+        Customer applicationUser = customerRepository.findByUsername(username);
         if(applicationUser == null){
             throw new UsernameNotFoundException(username);
         }
