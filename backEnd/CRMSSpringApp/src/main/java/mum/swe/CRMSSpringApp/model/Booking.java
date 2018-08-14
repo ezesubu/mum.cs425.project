@@ -2,7 +2,7 @@ package mum.swe.CRMSSpringApp.model;
 
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -13,8 +13,8 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate start;
-    private LocalDate end;
+    private Date start;
+    private Date end;
 
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
@@ -33,19 +33,19 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalDate getStart() {
+    public Date getStart() {
         return start;
     }
 
-    public void setStart(LocalDate start) {
+    public void setStart(Date start) {
         this.start = start;
     }
 
-    public LocalDate getEnd() {
+    public Date getEnd() {
         return end;
     }
 
-    public void setEnd(LocalDate end) {
+    public void setEnd(Date end) {
         this.end = end;
     }
 

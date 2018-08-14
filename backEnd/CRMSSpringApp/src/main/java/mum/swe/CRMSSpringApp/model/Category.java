@@ -1,9 +1,8 @@
 package mum.swe.CRMSSpringApp.model;
 
+import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +17,9 @@ public class Category {
     private String name;
     @Column(name = "category_price")
     private double price;
-
+    
     @OneToMany(mappedBy = "category", cascade = CascadeType.PERSIST)
-    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Car.class)
+    @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = Car.class)
     private List<Car> cars = new ArrayList<Car>();
 
     public Category() {

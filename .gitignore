@@ -1099,3 +1099,5 @@ hs_err_pid*
 /backEnd/CRMSSpringApp/src/main/webapp/WEB-INF/classes/templates/shared/homelayout.html
 /backEnd/CRMSSpringApp/src/main/webapp/WEB-INF/classes/templates/tables.html
 /backEnd/CRMSSpringApp/src/main/webapp
+/.idea
+/backEnd/CRMSSpringApp/src/main/webapp
