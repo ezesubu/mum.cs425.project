@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html layout:decorator="shared/base"
+>
+<div class="content" layout:fragment="content">
+    <h2>Categories</h2> <br/>
+    <a href="/category/new">Create a Category</a>
+    <a href="/home" id="">Back to home</a><br/><br/>
+    <table class="table table-striped">
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        </thead>
+        <tbody>
+        <tr th:each="category : ${categories}">
+            <td th:text="${category.id}"></td>
+            <td th:text="${category.name}"></td>
+            <td th:text="${category.price}"></td>
+            <td>
+                <a th:href="@{'/category/' + ${category.id}}">Edit</a>&nbsp;
+                <a th:href="@{'/category/delete/' + ${category.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
