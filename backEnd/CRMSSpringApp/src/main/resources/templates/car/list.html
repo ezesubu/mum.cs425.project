@@ -21,6 +21,7 @@
         </thead>
         <tbody>
         <tr th:each="car : ${cars}">
+
             <td th:text="${car.brand}"></td>
             <td th:text="${car.model}"></td>
             <td th:text="${car.color}"></td>
@@ -31,6 +32,7 @@
             <a th:href="@{'/car/edit/' + ${car.id}}">Edit</a>&nbsp;
             <a th:href="@{'/car/delete/' + ${car.id}}">Delete</a>
             </td>
+
         </tr>
         </tbody>
     </table>
