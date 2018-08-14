@@ -4,6 +4,8 @@ import mum.swe.CRMSSpringApp.model.Car;
 import mum.swe.CRMSSpringApp.repository.CarRepository;
 import mum.swe.CRMSSpringApp.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,12 +35,6 @@ public class CarServiceImpl implements CarService {
     public void delete(Long id) {
         carRepository.deleteById(id);
     }
-
-	/*@Override
-	public void updateCar(Car oldCar, Car newCar) {
-		 paymentRepository.updateCar(oldCar, newCar);
-	}
-*/
 
 }
 

@@ -8,12 +8,14 @@ require('ngstorage');
 // bootstrap and deps
 require('bootstrap/dist/css/bootstrap.css');
 require('bootstrap/dist/js/bootstrap.js');
-require('font-awesome/css/font-awesome.css')
+require('ui-bootstrap4/index');
+require('font-awesome/css/font-awesome.css');
 require('popper.js/dist/popper.js');
 require('jquery/dist/jquery.js');
 require('restangular');
 require('satellizer');
-require('angular-sweetalert');
+
+
 
 // util
 function importAll(r) {
@@ -21,7 +23,7 @@ function importAll(r) {
 }
 
 // begin module
-angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'oitozero.ngSweetAlert']);
+angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'ui.bootstrap']);
 
 // app deps
 require('./constants.js');

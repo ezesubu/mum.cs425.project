@@ -3,7 +3,7 @@ var angular = require('angular');
 
 require('../css/home.css')
 
-function homeCtrl($scope, $sessionStorage, $state, $filter, LoginSvc, CarSvc) {
+function homeCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSvc, CarSvc,CustomerCartSvc) {
   $scope.title = 'client';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
@@ -14,19 +14,52 @@ function homeCtrl($scope, $sessionStorage, $state, $filter, LoginSvc, CarSvc) {
         link: $state.href(x.name)
       }
     });
-  let promise = CarSvc.fnGetAll();
+
+     let promise = CarSvc.fnGetAll();
     promise.then(function (objData) {
-      $scope.cars = objData._embedded.cars;
+      $scope.cars = objData;
     });
 
 
 
+
   $scope.signout = signout;
+  $scope.addToCart = addToCart;
+
 
   function signout(){
     LoginSvc.logout()
     $state.go('login')
   }
+
+  function addToCart(id){
+      let car = {id: id};
+      let promise = CustomerCartSvc.fnAdd(car);
+      promise.then(function (objData) {
+          openComponentModal();
+      });
+  }
+
+
+    function openComponentModal() {
+
+        $uibModal.open({
+            ariaLabelledBy: 'modal-title-top',
+            ariaDescribedBy: 'modal-body-top',
+            templateUrl: 'stackedModal.html',
+            controller: ['$scope', '$uibModalInstance', '$location',
+                function($scope, $uibModalInstance, $location) {
+                    $scope.cancel = function () {
+                        $uibModalInstance.dismiss();
+                    };
+
+                    $scope.ok= function () {
+                        $location.path("/myCart");
+                    };
+                }
+            ]
+        });
+    };
 
 }
 
@@ -42,8 +75,10 @@ homeCtrl.$inject = [
   '$sessionStorage',
   '$state',
   '$filter',
+  '$uibModal',
   'LoginSvc',
-  'CarSvc'
+  'CarSvc',
+  'CustomerCartSvc'
 ]
 
 function routeConfig($stateProvider) {
