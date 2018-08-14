@@ -1,13 +1,13 @@
 'use strict';
 
 function CarSvc($q, Restangular){
+    let resource = Restangular.all('api/cars');
 
-    let resource = Restangular.all('cars');
 
-    function fnGetAll () {
+    function fnGetAll() {
         let def = $q.defer();
 
-        let promise = resource.customGET();
+        let promise = resource.customGET('');
 
         promise.then(
             function (objResponse) {
@@ -19,12 +19,11 @@ function CarSvc($q, Restangular){
 
         return def.promise;
     }
-    function fnFind(){
-        console.log("entering here");
-    }
+
+
+
   return {
-    fnGetAll: fnGetAll,
-    fnFind: fnFind
+      fnGetAll: fnGetAll
   }
 
 }

@@ -14,6 +14,9 @@ public class Customer {
     private String firstName;
     private String lastName;
 
+    private String username;
+    private String password;
+
     private Double accountNumber;
     private Double balance; //  current balance on account user or prepaid credit
 
@@ -69,6 +72,22 @@ public class Customer {
 
     public void setAccountNumber(Double accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
