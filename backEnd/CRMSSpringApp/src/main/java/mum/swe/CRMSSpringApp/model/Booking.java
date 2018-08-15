@@ -1,6 +1,8 @@
 package mum.swe.CRMSSpringApp.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,7 +15,9 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date start;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date end;
 
 
@@ -48,8 +52,6 @@ public class Booking {
     public void setEnd(Date end) {
         this.end = end;
     }
-
-
 
     public Car getCar() {
         return car;

@@ -19,11 +19,26 @@ function CarSvc($q, Restangular){
 
         return def.promise;
     }
+    function fnFind(id) {
+        let def = $q.defer();
+        let promise = resource.one(id).get();
+
+        promise.then(
+            function (objResponse) {
+                def.resolve(angular.copy(objResponse.data));
+            }, function (objResponse) {
+                def.resolve(angular.copy(objResponse.data));
+            }
+        );
+
+        return def.promise;
+    }
 
 
 
   return {
-      fnGetAll: fnGetAll
+      fnGetAll: fnGetAll,
+      fnFind: fnFind
   }
 
 }

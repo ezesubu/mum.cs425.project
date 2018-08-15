@@ -14,17 +14,15 @@ function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, Log
         link: $state.href(x.name)
       }
     });
-    console.log($auth.isAuthenticated());
-     let promise = CarSvc.fnGetAll();
+
+    let promise = CarSvc.fnGetAll();
+
     promise.then(function (objData) {
       $scope.cars = objData;
     });
 
-
-
-
-  $scope.signout = signout;
-  $scope.addToCart = addToCart;
+    $scope.signout = signout;
+    $scope.addToCart = addToCart;
 
 
   function signout(){

@@ -13,6 +13,7 @@ function loginCtrl($scope, $sessionStorage, $state, $filter, $localStorage, Logi
     if ( isValid ) {
         $scope.progress = true;
         $auth.login({username: $scope.username, password: $scope.password}).then(function () {
+           $localStorage.customer_id = 1;
            $state.go('home');
         },
         function () {

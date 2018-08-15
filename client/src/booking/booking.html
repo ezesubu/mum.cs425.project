@@ -9,7 +9,24 @@
     <h1>Select your car</h1>
     <p class="lead">Fairfield Rent Car.</p>
   </div>
-  <button ng-click="fnBook()" class="btn btn-primary">Select Car</button>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{car.imageUrl}}" alt="Car Image">
+    <div class="card-body">
+      <h4 class="card-title">{{car.brand}}</h4>
+      <p class="card-text">Model: {{car.model}}</p>
+      <p class="card-text">Status: {{car.status}}</p>
+      <p class="card-text">Seats: {{car.num_of_seat}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="pickDate">Pick-up Date</label>
+    <input type="input" class="form-control" id="pickDate" ng-model="book.start" placeholder="Enter Pick-up Date">
+  </div>
+  <div class="form-group">
+    <label for="dropDate">Drop Off</label>
+    <input type="input" class="form-control" id="dropDate" ng-model="book.end" placeholder="Enter Drop off Date">
+  </div>
+  <button ng-click="fnBook()" class="btn btn-primary">Payment</button>
 </main><!-- /.container -->
 <script type="text/ng-template" id="stackedModal.html">
   <div class="modal-header">

@@ -3,7 +3,8 @@ var angular = require('angular');
 
 require('../css/booking.css')
 
-function bookingCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSvc, BookSvc) {
+function bookingCtrl($scope, $sessionStorage, $state, $filter, $localStorage, $uibModal, CarSvc, BookSvc) {
+  $scope.book = {};
   $scope.title = 'Book a car';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
@@ -15,23 +16,33 @@ function bookingCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSv
       }
     });
 
-
+  fnGetCar();
 
   $scope.signout = signout;
-  $scope.fnBook= fnBook;
+  $scope.fnBook = fnBook;
 
+   function fnBook() {
+       if($localStorage.customer_id ){
+           $scope.book.car =  parseInt($state.params.car);
+           $scope.book.customer = $localStorage.customer_id;
+           let promise = BookSvc.fnAdd($scope.book);
+           promise.then(function (objData) {
+               console.log(objData);
+           });
+       }else{
+           $state.go("login", {car_id: $state.params.car});
+       }
+   }
 
   function signout(){
     LoginSvc.logout()
     $state.go('login')
   }
 
-  function fnBook(){
-
-      let promise = BookSvc.fnAdd($state.params.car);
+  function fnGetCar(){
+      let promise = CarSvc.fnFind($state.params.car);
       promise.then(function (objData) {
-         // $state.go('booking', {car: id});
-          console.log("Payment");
+          $scope.car = objData;
       });
   }
 
@@ -70,8 +81,9 @@ bookingCtrl.$inject = [
   '$sessionStorage',
   '$state',
   '$filter',
+  '$localStorage',
   '$uibModal',
-  'LoginSvc',
+  'CarSvc',
   'BookSvc',
 ]
 

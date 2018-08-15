@@ -5,10 +5,10 @@ function BookSvc($q, Restangular){
     let resource = Restangular.one('api/bookings');
 
 
-    function fnAdd(formData) {
+    function fnAdd(data) {
         let def = $q.defer();
 
-        let promise = resource.customPOST(formData);
+        let promise = resource.customPOST(data);
 
         promise.then(
             function (objResponse) {
