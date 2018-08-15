@@ -28,18 +28,18 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable()
-             //   .authorizeRequests()
-            //    .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
-            //    .anyRequest().authenticated()
-            //    .and()
-                .addFilter(new JWTAuthenticationFilter(authenticationManager()))
-                .addFilter(new JWTAuthorizationFilter(authenticationManager()));
-                // this disables session creation on Spring Security
-            //    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-    }
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.cors().and().csrf().disable()
+                    .authorizeRequests()
+                    .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
+                    .anyRequest().authenticated()
+                    .and()
+                    .addFilter(new JWTAuthenticationFilter(authenticationManager()))
+                    .addFilter(new JWTAuthorizationFilter(authenticationManager()));
+                    // this disables session creation on Spring Security
+                //    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        }
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -49,7 +49,14 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        CorsConfiguration config = new CorsConfiguration();
+      //  source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("*");
+
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        source.registerCorsConfiguration("/**", config);
         return source;
     }
 }

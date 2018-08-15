@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class CarController {
@@ -34,7 +35,7 @@ public class CarController {
     public ModelAndView cars() {
         List<Car> cars = carService.findAll();
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("cars", cars);
+        modelAndView.addObject("cars", cars.stream().filter(x->x.getStatus().equals("0")).collect(Collectors.toList()));
         modelAndView.setViewName("car/list");
         return modelAndView;
     }
@@ -67,7 +68,10 @@ public class CarController {
 
     @RequestMapping(value = "/car/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable Long id, Model model) {
-        carService.delete(id);
+        Car car = carService.findById(id);
+        car.setStatus("2");
+        this.carService.save(car);
+
         return "redirect:/car";
     }
 }

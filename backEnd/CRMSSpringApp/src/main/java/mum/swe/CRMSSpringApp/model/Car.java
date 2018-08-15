@@ -1,8 +1,5 @@
 package mum.swe.CRMSSpringApp.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import javax.persistence.*;
 
 
@@ -13,32 +10,38 @@ public class Car {
     private Long id;
     private String brand;
     private String model;
-    private String color;
     private String imageUrl;
-
+    private String color;
     private Long num_of_seat;
 
     @ManyToOne
-    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Car.class)
     private Category category;
     private String status; //(Ahmed we have it as string not number) vvalues are 0 , 1 , 2 ( Metting about it 04 08 2018)
 
     public Car() {
     }
 
-
     public Car(String brand, String model, String color, Long num_of_seat, String imageUrl, Category category, String status) {
+
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.num_of_seat = num_of_seat;
-        this.imageUrl = imageUrl;
         this.category = category;
         this.status = status;
+        this.imageUrl=imageUrl;
+        
     }
 
+    public String getImageUrl() {
+		return imageUrl;
+	}
 
-    public Long getId() {
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -82,15 +85,6 @@ public class Car {
         this.num_of_seat = num_of_seat;
     }
 
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public Category getCategory() {
         return category;
     }
@@ -99,8 +93,29 @@ public class Car {
         this.category = category;
     }
 
+
     public String getStatus() {
-        return status;
+        return  this.status;
+    }
+    public String translateStatus() {
+
+        if (this.status==null)
+        {
+            return null;
+        }
+        switch (this.status)
+        {
+                case "0" :
+                    return "Available";
+                case "1" :
+                    return "Reserved";
+                case "2" :
+                    return "Deleted";
+
+
+        }
+        return "";
+
     }
 
     public void setStatus(String status) {

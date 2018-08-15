@@ -36,7 +36,11 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             throws AuthenticationException{
         try {
             Customer creds = new ObjectMapper().readValue(req.getInputStream(), Customer.class);
-
+            res.setHeader("Access-Control-Allow-Origin", "*");
+            res.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+            res.setHeader("Access-Control-Max-Age", "3600");
+            res.setHeader("Access-Control-Allow-Headers", "Authorization, x-xsrf-token, Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, " +
+                    "Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(creds.getUsername(),
                             creds.getPassword(), new ArrayList<>())
@@ -57,7 +61,9 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .withSubject(((User) auth.getPrincipal()).getUsername())
                 .withExpiresAt(new  Date(System.currentTimeMillis() + SecurityConstants.EXPIRATION_TIME))
                 .sign(HMAC512(SecurityConstants.SECRET.getBytes()));
+
         res.addHeader(SecurityConstants.HEADER_STRING , SecurityConstants.TOKEN_PREFIX + token);
+
     }
 
 

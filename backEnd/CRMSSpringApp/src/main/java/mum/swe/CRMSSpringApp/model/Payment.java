@@ -30,7 +30,7 @@ public class Payment {
     }
 
     public void setBooking(Booking booking) {
-        this.booking = booking;
+        booking = booking;
     }
 
     public Long getId() {

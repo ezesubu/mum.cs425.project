@@ -14,6 +14,8 @@ require('popper.js/dist/popper.js');
 require('jquery/dist/jquery.js');
 require('restangular');
 require('satellizer');
+require('ngstorage');
+require('angular-sweetalert');
 
 
 
@@ -23,7 +25,7 @@ function importAll(r) {
 }
 
 // begin module
-angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'ui.bootstrap']);
+angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'ui.bootstrap', 'ngStorage', 'oitozero.ngSweetAlert']);
 
 // app deps
 require('./constants.js');
@@ -59,6 +61,7 @@ importAll(require.context('./directives', false, /\.js$/))
 importAll(require.context('./login', false, /.js$/))
 importAll(require.context('./home', true, /.js$/))
 importAll(require.context('./car', true, /.js$/))
+importAll(require.context('./booking', true, /.js$/))
 
 angular.module('car')
   .config(['$urlRouterProvider', 'RestangularProvider', 'carConstants', '$authProvider', setDefaults])

@@ -1,11 +1,11 @@
-'use strict';
 var angular = require('angular');
 
 require('../css/login.css')
 
-function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc,$auth, $uibModal ) {
+function loginCtrl($scope, $sessionStorage, $state, $filter, $localStorage, LoginSvc,$auth,SweetAlert) {
   $scope.progress = false;
   $scope.title = 'client';
+  $auth.setStorageType('sessionStorage');
 
   $scope.copyrightYear = new Date().getFullYear();
   LoginSvc.logout();
@@ -16,7 +16,7 @@ function loginCtrl($scope, $sessionStorage, $state, $filter, LoginSvc,$auth, $ui
            $state.go('home');
         },
         function () {
-            console.log("Error", "User o Password incorrect", "error");
+            SweetAlert.swal("Error", "User o Password incorrect", "error");
         });
         $scope.progress = false;
     }
@@ -35,9 +35,10 @@ loginCtrl.$inject = [
   '$sessionStorage',
   '$state',
   '$filter',
+  '$localStorage',
   'LoginSvc',
   '$auth',
-  '$uibModal'
+  'SweetAlert'
 ]
 
 function routeConfig($stateProvider) {

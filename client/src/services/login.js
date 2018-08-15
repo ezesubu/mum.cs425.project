@@ -1,34 +1,18 @@
-'use strict';
 
-function LoginSvc($http, $sessionStorage, carConstants){
+function LoginSvc($http,$state,$sessionStorage, carConstants){
 
   function login(username, password) {
-    let auth = btoa(`${username}:${password}`)
-    return $http.get(carConstants.loginUrl, {
-      headers: {
-        'Authorization': 'Basic ' + auth
+
+
+     // $cookieStore.put('globals', $rootScope.globals);
+      var req = {
+          method: 'POST',
+          url: carConstants.loginUrl,
+          data: { username: username, password: password }
       }
-    })
-      .then(res => {
-        let ret = res.data || {};
-        if ( res.status == 200 ) {
-          ret = res.data;
-          $sessionStorage.user = ret.user;
-          ret.message = 'Login successful'
-        } else {
-          ret = {
-            authenticated: false,
-            message: `${res.status} ${res.statusText}`
-          }
-        }
-        return ret;
-      })
-      .catch(err => {
-        return {
-          authenticated: false,
-          message: `${err.status} ${err.statusText}`
-        }
-      })
+
+
+
   }
 
   function logout() {
@@ -44,6 +28,7 @@ function LoginSvc($http, $sessionStorage, carConstants){
 
 const serviceConfig = [
   '$http',
+  '$state',
   '$sessionStorage',
   'carConstants',
   LoginSvc

@@ -1,6 +1,7 @@
 package mum.swe.CRMSSpringApp.controller.api;
 
 import mum.swe.CRMSSpringApp.model.Car;
+import mum.swe.CRMSSpringApp.model.Category;
 import mum.swe.CRMSSpringApp.service.CarService;
 import mum.swe.CRMSSpringApp.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,10 @@ public class CarRestAPIController {
     @GetMapping(value = "/cars/{id}")
     public @ResponseBody
     Car findCarById(@PathVariable Long id) {
-        Car car = carService.findById(id);
-        if (car == null) {
-            return new Car();
-        }
+    	Car car = carService.findById(id);
+    	if(car == null) {
+    		return  new Car();
+    	}
         return car;
     }
 
@@ -45,10 +46,10 @@ public class CarRestAPIController {
         carService.delete(id);
         return true;
     }
-
-    @PutMapping(value = "/cars")
-    public boolean updateCar(@RequestBody Car car) {
-        carService.save(car);
+    
+	@PutMapping(value = "/cars")
+	public boolean updateCar(@RequestBody Car car) {
+		carService.save(car);
 		return true;
-    }
+	}
 }

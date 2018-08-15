@@ -8,8 +8,11 @@ import java.util.List;
 @Service
 public interface CategoryService {
     List<Category> findAll();
+
     Category save(Category car);
+
     //	 Car findOne(Long id);
     Category findById(Long id);
+
     void delete(Long id);
 }

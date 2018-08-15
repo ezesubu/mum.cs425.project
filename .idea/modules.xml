@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/CRMSSpringApp.iml" filepath="$PROJECT_DIR$/backEnd/CRMSSpringApp/CRMSSpringApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/mum.cs425.project.iml" filepath="$PROJECT_DIR$/.idea/mum.cs425.project.iml" />
-    </modules>
-  </component>
-</project>

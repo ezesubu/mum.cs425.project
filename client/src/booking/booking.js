@@ -1,10 +1,10 @@
 'use strict';
 var angular = require('angular');
 
-require('../css/home.css')
+require('../css/booking.css')
 
-function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, LoginSvc, CarSvc) {
-  $scope.title = 'client';
+function bookingCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSvc, BookSvc) {
+  $scope.title = 'Book a car';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
     .filter(x => x.name.startsWith('home.'))
@@ -14,17 +14,11 @@ function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, Log
         link: $state.href(x.name)
       }
     });
-    console.log($auth.isAuthenticated());
-     let promise = CarSvc.fnGetAll();
-    promise.then(function (objData) {
-      $scope.cars = objData;
-    });
-
 
 
 
   $scope.signout = signout;
-  $scope.addToCart = addToCart;
+  $scope.fnBook= fnBook;
 
 
   function signout(){
@@ -32,9 +26,13 @@ function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, Log
     $state.go('login')
   }
 
-  function addToCart(id){
-      $state.go('booking', {car: id});
+  function fnBook(){
 
+      let promise = BookSvc.fnAdd($state.params.car);
+      promise.then(function (objData) {
+         // $state.go('booking', {car: id});
+          console.log("Payment");
+      });
   }
 
 
@@ -61,21 +59,20 @@ function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, Log
 }
 
 var stateConfig = {
-  name: 'home',
-  url: '/home',
-  templateUrl: require('./home.html'),
-  controller: 'homeCtrl'
+  name: 'booking',
+  url: '/booking/:car',
+  templateUrl: require('./booking.html'),
+  controller: 'bookingCtrl'
 };
 
-homeCtrl.$inject = [
+bookingCtrl.$inject = [
   '$scope',
   '$sessionStorage',
-  '$auth',
   '$state',
   '$filter',
   '$uibModal',
   'LoginSvc',
-  'CarSvc'
+  'BookSvc',
 ]
 
 function routeConfig($stateProvider) {
@@ -83,7 +80,7 @@ function routeConfig($stateProvider) {
 }
 
 angular.module('car')
-  .controller('homeCtrl', homeCtrl)
+  .controller('bookingCtrl', bookingCtrl)
   .config([ '$stateProvider', routeConfig ])
 
 module.exports = stateConfig;

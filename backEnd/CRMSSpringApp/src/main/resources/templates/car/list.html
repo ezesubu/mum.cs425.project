@@ -1,31 +1,38 @@
 <!DOCTYPE html >
 <html xmlns:th="http://www.thymeleaf.org"
-      layout:decorator="shared/homelayout">
+      layout:decorator="shared/base">
 <body>
 <th:block layout:fragment="header">
     <link rel="stylesheet" type="text/css" th:href="@{/css/studentlist.css}"/>
 </th:block>
 
 <th:block layout:fragment="content">
-    <h2>Student List</h2> <br/>
-    <a href="/student">Create a student</a>
+    <h2>Car List</h2> <br/>
+    <a href="/car/new">Create a Car</a>
     <a href="/" id="linkBackHome">Back to home</a><br/><br/>
     <table class="table table-striped">
         <thead>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Email</th>
-        <th>Actions</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Color</th>
+        <th>No. of Seats</th>
+        <th>Status</th>
+        <th>Categories</th>
         </thead>
         <tbody>
-        <tr th:each="student : ${students}">
-            <td th:text="${student.firstName}"></td>
-            <td th:text="${student.lastName}"></td>
-            <td th:text="${student.email}"></td>
+        <tr th:each="car : ${cars}">
+
+            <td th:text="${car.brand}"></td>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.color}"></td>
+            <td th:text="${car.num_of_seat}"></td>
+            <td th:text="${car.translateStatus()}"></td>
+            <td th:text="${car.category.name}"></td>
             <td>
-                <a th:href="@{'/student/' + ${student.id}}">Edit</a>&nbsp;
-                <a th:href="@{'/student/delete/' + ${student.id}}">Delete</a>
+            <a th:href="@{'/car/edit/' + ${car.id}}">Edit</a>&nbsp;
+            <a th:href="@{'/car/delete/' + ${car.id}}">Delete</a>
             </td>
+
         </tr>
         </tbody>
     </table>
