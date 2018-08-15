@@ -25,11 +25,6 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter    {
         throws IOException, ServletException{
 
         String header = req.getHeader(SecurityConstants.HEADER_STRING);
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
-        res.setHeader("Access-Control-Max-Age", "3600");
-        res.setHeader("Access-Control-Allow-Headers", "Authorization, x-xsrf-token, Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, " +
-                "Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
         if(header == null || !header.startsWith(SecurityConstants.TOKEN_PREFIX)){
             chain.doFilter(req, res);
             return;

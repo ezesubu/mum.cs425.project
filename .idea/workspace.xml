@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b1a4264-a9ad-46fd-9add-380266bb23ff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/security/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/security/WebSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/booking/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/booking/booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/booking/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/booking/booking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/BookSvc.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/BookSvc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/car.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/car.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/webapp/WEB-INF/classes/" />
     <ignored path="$PROJECT_DIR$/backEnd/CRMSSpringApp/target/" />
@@ -31,7 +25,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JWTAuthenticationFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="booking.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/booking/booking.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
@@ -58,6 +61,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
               <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JWTAuthorizationFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -101,20 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookSvc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/services/BookSvc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Booking.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -147,8 +150,6 @@
         <option value="$PROJECT_DIR$/client/src/booking/home.js" />
         <option value="$PROJECT_DIR$/client/src/css/booking.css" />
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/constants/SecurityConstants.java" />
-        <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java" />
-        <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/app.js" />
         <option value="$PROJECT_DIR$/client/src/css/home.css" />
@@ -161,6 +162,8 @@
         <option value="$PROJECT_DIR$/client/src/booking/booking.html" />
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java" />
         <option value="$PROJECT_DIR$/client/src/booking/booking.js" />
+        <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java" />
       </list>
     </option>
   </component>
@@ -277,34 +280,20 @@
               <item name="mum" type="462c0819:PsiDirectoryNode" />
               <item name="swe" type="462c0819:PsiDirectoryNode" />
               <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mum.cs425.project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mum.cs425.project" type="462c0819:PsiDirectoryNode" />
+              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mum" type="462c0819:PsiDirectoryNode" />
+              <item name="swe" type="462c0819:PsiDirectoryNode" />
+              <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mum.cs425.project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mum.cs425.project" type="462c0819:PsiDirectoryNode" />
-              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mum" type="462c0819:PsiDirectoryNode" />
-              <item name="swe" type="462c0819:PsiDirectoryNode" />
-              <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mum.cs425.project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mum.cs425.project" type="462c0819:PsiDirectoryNode" />
-              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mum" type="462c0819:PsiDirectoryNode" />
-              <item name="swe" type="462c0819:PsiDirectoryNode" />
-              <item name="CRMSSpringApp" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mum.cs425.project" type="b2602c69:ProjectViewProjectNode" />
@@ -449,12 +438,12 @@
       <option name="presentableId" value="Default" />
       <updated>1534272375186</updated>
       <workItem from="1534272376427" duration="17067000" />
-      <workItem from="1534345732272" duration="4572000" />
+      <workItem from="1534345732272" duration="4990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21639000" />
+    <option name="totallyTimeSpent" value="22057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -470,7 +459,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32934782" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -481,7 +470,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49811116" weight="0.49347827" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32934782" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2665947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2665947" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -545,7 +534,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java</url>
-          <line>25</line>
+          <line>33</line>
           <properties field="car" class="mum.swe.CRMSSpringApp.model.Booking" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -795,20 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/security/WebSecurity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -891,7 +866,7 @@
     <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
@@ -920,6 +895,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
         </state>
       </provider>
     </entry>
