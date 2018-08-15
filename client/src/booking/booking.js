@@ -3,8 +3,9 @@ var angular = require('angular');
 
 require('../css/booking.css')
 
-function bookingCtrl($scope, $sessionStorage, $state, $filter, $localStorage, $uibModal, CarSvc, BookSvc) {
+function bookingCtrl($scope, $sessionStorage, $state, $filter, $localStorage, $uibModal, moment, SweetAlert,CarSvc, BookSvc, PaymentSvc) {
   $scope.book = {};
+  $scope.payment = {};
   $scope.title = 'Book a car';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
@@ -22,12 +23,20 @@ function bookingCtrl($scope, $sessionStorage, $state, $filter, $localStorage, $u
   $scope.fnBook = fnBook;
 
    function fnBook() {
-       if($localStorage.customer_id ){
-           $scope.book.car =  parseInt($state.params.car);
-           $scope.book.customer = $localStorage.customer_id;
+       if($localStorage.customer ){
+
+           $scope.book.car =  {"id": parseInt($state.params.car)};
+           $scope.book.customer = $localStorage.customer;
            let promise = BookSvc.fnAdd($scope.book);
            promise.then(function (objData) {
-               console.log(objData);
+               $scope.payment.booking = {id: objData.id};
+               $scope.payment.paymentDate = moment().format();
+               console.log("the payment 123", $scope.payment);
+               let promise = PaymentSvc.fnAdd($scope.payment);
+               promise.then(function (objData) {
+                   SweetAlert.swal("success", "Payment Done", "success");
+                   $state.go("home");
+               });
            });
        }else{
            $state.go("login", {car_id: $state.params.car});
@@ -38,6 +47,14 @@ function bookingCtrl($scope, $sessionStorage, $state, $filter, $localStorage, $u
     LoginSvc.logout()
     $state.go('login')
   }
+    $scope.$watch("book", function(){
+        if($scope.book.start && $scope.book.end){
+            let start = moment($scope.book.start);
+            let end = moment($scope.book.end);
+            $scope.payment.rent_duration = end.diff(start, 'days');
+            $scope.payment.amount =  $scope.payment.rent_duration * $scope.car.category.price;
+        }
+    }, true);
 
   function fnGetCar(){
       let promise = CarSvc.fnFind($state.params.car);
@@ -83,8 +100,11 @@ bookingCtrl.$inject = [
   '$filter',
   '$localStorage',
   '$uibModal',
+  'moment',
+  'SweetAlert',
   'CarSvc',
   'BookSvc',
+  'PaymentSvc'
 ]
 
 function routeConfig($stateProvider) {

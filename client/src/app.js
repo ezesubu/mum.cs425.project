@@ -16,6 +16,7 @@ require('restangular');
 require('satellizer');
 require('ngstorage');
 require('angular-sweetalert');
+require('angular-moment');
 
 
 
@@ -25,7 +26,7 @@ function importAll(r) {
 }
 
 // begin module
-angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'ui.bootstrap', 'ngStorage', 'oitozero.ngSweetAlert']);
+angular.module('car', ['ui.router', 'ngStorage', 'restangular', 'satellizer', 'ui.bootstrap', 'ngStorage', 'oitozero.ngSweetAlert', 'angularMoment']);
 
 // app deps
 require('./constants.js');

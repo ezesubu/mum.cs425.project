@@ -1,6 +1,9 @@
 package mum.swe.CRMSSpringApp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -9,7 +12,8 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate paymentDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date paymentDate;
     private Double amount; 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "booking_id", nullable = true)
@@ -42,11 +46,11 @@ public class Payment {
         this.id = id;
     }
 
-	public LocalDate getPaymentDate() {
+	public Date getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(LocalDate paymentDate) {
+	public void setPaymentDate(Date paymentDate) {
 		this.paymentDate = paymentDate;
 	}
 
