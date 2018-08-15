@@ -19,6 +19,8 @@ public class HomeController
     @Autowired
     private BookingService bookingServiceg;
 
+
+
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     //"home/index"
     public ModelAndView home() {

@@ -28,8 +28,8 @@ public class BookingRestAPIController {
     }
 
     @GetMapping(value = "/bookings/{id}")
-    public @ResponseBody
-    Optional<Booking> findBookingById(@PathVariable Long id) {
+    @ResponseBody
+    public Optional<Booking> findBookingById(@PathVariable Long id) {
     	return bookingService.findById(id);
     }
 
