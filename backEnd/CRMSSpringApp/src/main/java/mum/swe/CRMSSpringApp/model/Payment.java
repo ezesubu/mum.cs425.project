@@ -31,7 +31,7 @@ public class Payment {
     }
 
     public void setBooking(Booking booking) {
-        booking = booking;
+        this.booking = booking;
     }
 
     public Long getId() {
