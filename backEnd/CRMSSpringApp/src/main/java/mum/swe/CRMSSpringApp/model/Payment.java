@@ -1,5 +1,10 @@
 package mum.swe.CRMSSpringApp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,17 +12,9 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int rent_duration;
-    private Double amount;
-
-    public Double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date paymentDate;
+    private Double amount; 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "booking_id", nullable = true)
     private Booking booking;
@@ -27,6 +24,14 @@ public class Payment {
 
     public Booking getBooking() {
         return booking;
+    }
+    
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
     public void setBooking(Booking booking) {
@@ -41,12 +46,14 @@ public class Payment {
         this.id = id;
     }
 
-    public int getRent_duration() {
-        return rent_duration;
-    }
+	public Date getPaymentDate() {
+		return paymentDate;
+	}
 
-    public void setRent_duration(int rent_duration) {
-        this.rent_duration = rent_duration;
-    }
+	public void setPaymentDate(Date paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+ 
 }
 

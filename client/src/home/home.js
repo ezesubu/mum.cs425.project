@@ -3,7 +3,7 @@ var angular = require('angular');
 
 require('../css/home.css')
 
-function homeCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSvc, CarSvc,CustomerCartSvc) {
+function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, LoginSvc, CarSvc) {
   $scope.title = 'client';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
@@ -15,16 +15,15 @@ function homeCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSvc, 
       }
     });
 
-     let promise = CarSvc.fnGetAll();
+    let promise = CarSvc.fnGetAll();
+
     promise.then(function (objData) {
+        console.log(objData);
       $scope.cars = objData;
     });
 
-
-
-
-  $scope.signout = signout;
-  $scope.addToCart = addToCart;
+    $scope.signout = signout;
+    $scope.addToCart = addToCart;
 
 
   function signout(){
@@ -33,11 +32,8 @@ function homeCtrl($scope, $sessionStorage, $state, $filter,$uibModal, LoginSvc, 
   }
 
   function addToCart(id){
-      let car = {id: id};
-      let promise = CustomerCartSvc.fnAdd(car);
-      promise.then(function (objData) {
-          openComponentModal();
-      });
+      $state.go('booking', {car: id});
+
   }
 
 
@@ -73,12 +69,12 @@ var stateConfig = {
 homeCtrl.$inject = [
   '$scope',
   '$sessionStorage',
+  '$auth',
   '$state',
   '$filter',
   '$uibModal',
   'LoginSvc',
-  'CarSvc',
-  'CustomerCartSvc'
+  'CarSvc'
 ]
 
 function routeConfig($stateProvider) {

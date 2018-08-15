@@ -1,0 +1,33 @@
+<div ng-include="navBar"></div>
+<ul class="nav" ng-if="links">
+  <li class="nav-item" ng-repeat="link in links">
+    <a class="nav-link" ui-sref-active="active" ng-href="{{link.link}}">{{link.title | titlecase}}</a>
+  </li>
+</ul>
+<main role="main" class="container pt-5" ui-view>
+  <div class="starter-template">
+    <h1>Select your car</h1>
+    <p class="lead">Fairfield Rent Car.</p>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{car.imageUrl}}" alt="Car Image">
+    <div class="card-body">
+      <h4 class="card-title">{{car.brand}}</h4>
+      <p class="card-text">Model: {{car.model}}</p>
+      <p class="card-text">Status: {{car.status}}</p>
+      <p class="card-text">Seats: {{car.num_of_seat}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="pickDate">Pick-up Date</label>
+    <input type="date" class="form-control" id="pickDate" ng-model="book.start" placeholder="Enter Pick-up Date">
+
+  <div class="form-group">
+    <label for="dropDate">Drop Off</label>
+    <input type="date" class="form-control" id="dropDate" ng-model="book.end" placeholder="Enter Drop off Date">
+  </div>
+  </div><div class="form-group">
+  <h1>Total: {{ payment.amount || 0}}</h1>
+</div>
+  <button ng-click="fnBook()" class="btn btn-primary">Payment</button>
+</main><!-- /.container -->

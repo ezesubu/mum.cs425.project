@@ -2,20 +2,23 @@ package mum.swe.CRMSSpringApp.model;
 
 
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 
 @Entity
 public class Booking {
 
-    public  Booking(){}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date start;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date end;
-
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "car_id", nullable = true)
