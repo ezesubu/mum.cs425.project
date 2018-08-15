@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b1a4264-a9ad-46fd-9add-380266bb23ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/services/PaymentSvc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/booking/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/booking/booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/booking/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/booking/booking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/home/home.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/webapp/WEB-INF/classes/" />
     <ignored path="$PROJECT_DIR$/backEnd/CRMSSpringApp/target/" />
@@ -25,75 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/services/login.js">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="304">
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/login/login.js">
+      <file leaf-file-name="Category.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Category.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="34" />
+            <state relative-caret-position="114">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/booking/booking.html">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="booking.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/booking/booking.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Payment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Payment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-              <folding>
-                <element signature="e#890#891#0" expanded="true" />
-                <element signature="e#915#916#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Booking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentSvc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/services/PaymentSvc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="228">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -132,7 +79,6 @@
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/security/WebSecurity.java" />
         <option value="$PROJECT_DIR$/client/src/services/car.js" />
         <option value="$PROJECT_DIR$/client/src/services/BookSvc.js" />
-        <option value="$PROJECT_DIR$/client/src/home/home.js" />
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/filters/JWTAuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Booking.java" />
@@ -144,6 +90,9 @@
         <option value="$PROJECT_DIR$/client/src/booking/booking.js" />
         <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Payment.java" />
         <option value="$PROJECT_DIR$/client/src/booking/booking.html" />
+        <option value="$PROJECT_DIR$/client/src/home/home.js" />
+        <option value="$PROJECT_DIR$/client/src/home/home.html" />
+        <option value="$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Category.java" />
       </list>
     </option>
   </component>
@@ -294,6 +243,13 @@
               <item name="mum.cs425.project" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mum.cs425.project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mum.cs425.project" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -408,12 +364,12 @@
       <option name="presentableId" value="Default" />
       <updated>1534272375186</updated>
       <workItem from="1534272376427" duration="17067000" />
-      <workItem from="1534345732272" duration="10911000" />
+      <workItem from="1534345732272" duration="11844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27978000" />
+    <option name="totallyTimeSpent" value="28911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -437,10 +393,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975715" weight="0.4152174" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4975715" visible="true" weight="0.4152174" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32934782" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2665947" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2665947" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -513,13 +469,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.32/tomcat-embed-core-8.5.32.jar!/org/apache/tomcat/util/net/NioEndpoint.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="361" selection-start-line="361" selection-end-line="361" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.32/tomcat-embed-core-8.5.32.jar!/org/apache/tomcat/util/net/SocketProcessorBase.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -705,20 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/services/BookSvc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -831,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/services/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -880,6 +808,34 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#main#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/CRMSSpringApp/src/main/java/mum/swe/CRMSSpringApp/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>

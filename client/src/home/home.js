@@ -18,6 +18,7 @@ function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, Log
     let promise = CarSvc.fnGetAll();
 
     promise.then(function (objData) {
+        console.log(objData);
       $scope.cars = objData;
     });
 
