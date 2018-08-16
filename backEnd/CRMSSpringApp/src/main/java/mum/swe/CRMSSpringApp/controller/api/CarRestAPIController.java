@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -22,7 +23,7 @@ public class CarRestAPIController {
     @ResponseBody
     @CrossOrigin(origins = "http://localhost:4200")
     public List<Car> getAllCars() {
-        return carService.findAll();
+        return carService.findAll().stream().filter(car -> car.getStatus().equals("0")).collect(Collectors.toList());
     }
 
     @PostMapping(value = "/cars")

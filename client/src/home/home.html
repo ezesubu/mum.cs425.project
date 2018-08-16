@@ -5,39 +5,88 @@
   </li>
 </ul>
 <main role="main" class="container pt-5" ui-view>
-  <div class="starter-template">
-    <h1>Select your car</h1>
-    <p class="lead">Fairfield Rent Car.</p>
+  <div class="pricing-header px-3 py-3 pt-md-1 pb-md-1 mx-auto text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p class="lead">If you are MUM student do you have 30% of discount. But if you are MUM COMPRO student do you have 100% of discount</p>
   </div>
-  <div class="card-columns">
+
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Promotion</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title"> $10 <small class="text-muted"></small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Your first time</li>
+            <li>You are from Iowa</li>
+            <li>Email support</li>
+            <li>Help center access</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">I want It!</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Promotion</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">20% <small class="text-muted"></small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>MUM Student</li>
+            <li>Have a good waves</li>
+            <li>Go to Meditate 80%</li>
+            <li>Support our group</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">I want It!</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Promotion</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">100%<small class="text-muted"></small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>You are MUM Student</li>
+            <li>You are COMPRO Student</li>
+            <li>Thing our professor its the rocks!!</li>
+            <li>Support our group</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-header px-3 py-3 pt-md-1 pb-md-1 mx-auto text-center">
+      <h1 class="display-4">Cars</h1>
+    </div>
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">Chose You  Car...</h4>
+    </div>
+
+    <div class="card-columns">
     <div class="card" style="width: 18rem;" ng-repeat="car in cars">
       <img class="card-img-top" src="{{car.imageUrl}}" alt="Car Image">
       <div class="card-body">
         <h4 class="card-title">{{car.brand}}</h4>
         <p class="card-text">Category: {{car.category.name}}</p>
-        <p class="card-text">Price per day: {{car.category.price}}</p>
+        <p class="card-text">Price x day: {{car.category.price}}</p>
         <p class="card-text">Model: {{car.model}}</p>
         <p class="card-text">Status: {{car.status}}</p>
         <p class="card-text">Seats: {{car.num_of_seat}}</p>
-        <button ng-click="addToCart(car.id)" class="btn btn-primary">Select Car</button>
+        <div class="float-right px-3 py-3">
+          <button ng-click="addToCart(car.id)" class="btn btn-primary right" >Select Car</button>
+        </div>
       </div>
     </div>
   </div>
 </main><!-- /.container -->
-<script type="text/ng-template" id="stackedModal.html">
-  <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+<footer class="text-muted  px-3 py-3 pt-md-1 pb-md-1 mx-auto ">
+  <div class="container">
+    <p class="float-right text-white">
+      <a href="#" class="text-white">Back to top</a>
+    </p>
+    <p class="text-white">CS426. Software Engineering </p>
   </div>
-  <div class="modal-body" id="modal-body">
-    <ul>
-      <li ng-repeat="item in $ctrl.items">
-        <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-      </li>
-    </ul>
-    Selected: <b>{{ $ctrl.selected.item }}</b>
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-  </div>
-</script>
+</footer>

@@ -1,8 +1,8 @@
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" ng-bind-template="{{title | titlecase}}"></a>
+<nav class="navbar sticky-top text_color bg_color flex-md-nowrap p-0">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" style="color: white !important;" href="#/home" ><img src="https://tbncdn.freelogodesign.org/349db1c8-5ff3-407c-8ccd-0323124d986e.png?1534390551842" width="80px" height="80"> </a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#" ng-click="signout()">Sign out</a>
+      <a class="nav-link " style="color: white !important;" href="#/login" ng-click="signout()">{{user.firstName || "Login"}}</a>
     </li>
   </ul>
 </nav>

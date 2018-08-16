@@ -6,28 +6,56 @@
 </ul>
 <main role="main" class="container pt-5" ui-view>
   <div class="starter-template">
-    <h1>Select your car</h1>
+    <h1>Almost to done</h1>
     <p class="lead">Fairfield Rent Car.</p>
   </div>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{car.imageUrl}}" alt="Car Image">
-    <div class="card-body">
-      <h4 class="card-title">{{car.brand}}</h4>
-      <p class="card-text">Model: {{car.model}}</p>
-      <p class="card-text">Status: {{car.status}}</p>
-      <p class="card-text">Seats: {{car.num_of_seat}}</p>
+  <div class="row">
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{car.imageUrl}}" alt="Car Image">
+          <div class="card-body">
+            <h4 class="card-title">{{car.brand}}</h4>
+            <p class="card-text">Model: {{car.model}}</p>
+            <p class="card-text">Status: {{car.status}}</p>
+            <p class="card-text">Seats: {{car.num_of_seat}}</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+      <label for="pickDate">Pick-up Date</label>
+      <input type="date" class="form-control" id="pickDate" ng-model="book.start" placeholder="Enter Pick-up Date">
+    </div>
+    <div class="form-group">
+      <label for="dropDate">Drop Off</label>
+      <input type="date" class="form-control" id="dropDate" ng-model="book.end" placeholder="Enter Drop off Date">
+    </div>
+      <br>
+    <div class="form-group">
+      <h3 class="color">{{ (payment.amount  | currency:"USD$":0) || 'Please choose the dates for see a mount' }}</h3>
     </div>
   </div>
-  <div class="form-group">
-    <label for="pickDate">Pick-up Date</label>
-    <input type="date" class="form-control" id="pickDate" ng-model="book.start" placeholder="Enter Pick-up Date">
-
-  <div class="form-group">
-    <label for="dropDate">Drop Off</label>
-    <input type="date" class="form-control" id="dropDate" ng-model="book.end" placeholder="Enter Drop off Date">
   </div>
-  </div><div class="form-group">
-  <h1>Total: {{ payment.amount || 0}}</h1>
-</div>
-  <button ng-click="fnBook()" class="btn btn-primary">Payment</button>
+  <div class="row">
+    <div class="col-sm align-content-center" style="text-align: center">
+      <button ng-click="fnBook()" class="btn btn-primary btn-lg text-center">Payment</button>
+    </div>
+  </div>
 </main><!-- /.container -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="text-muted  px-3 py-3 pt-md-1 pb-md-1 mx-auto">
+  <div class="container">
+    <p class="float-right text-white">
+      <a href="#" class="text-white">Back to top</a>
+    </p>
+    <p class="text-white">CS426. Software Engineering </p>
+  </div>
+</footer>

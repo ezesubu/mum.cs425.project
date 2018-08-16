@@ -1,6 +1,7 @@
-<div class="text-center">
+<div class="container">
+<div class="text-center align-middle">
   <form class="form-signin" novalidate name="loginForm" ng-submit="submitForm(loginForm.$valid)">
-    <img class="mb-4" src="https://angularjs.org/img/AngularJS-large.png" alt="Logo">
+    <img class="mb-4" src="https://tbncdn.freelogodesign.org/349db1c8-5ff3-407c-8ccd-0323124d986e.png?1534390551842" alt="Logo">
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="username" class="sr-only">Email address</label>
@@ -11,6 +12,7 @@
     <p class="text-danger" ng-show="loginForm.password.$error.required && !loginForm.password.$pristine">Password is required</p>
     <button class="btn btn-lg btn-primary btn-block" ng-class="{'progress-bar-striped progress-bar-animated': progress}" type="submit" >Sign in</button>
     <span class="text-danger" ng-bind="message"></span>
-    <p class="mt-5 mb-3 text-muted">&copy; {{copyrightYear}}</p>
+    <p class="mt-5 mb-3 text-muted">Fairfield Rental Car Service</p>
   </form>
+</div>
 </div>

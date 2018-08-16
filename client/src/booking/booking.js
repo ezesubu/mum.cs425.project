@@ -7,6 +7,7 @@ function bookingCtrl($scope, $sessionStorage, $state, $filter, $localStorage, $u
   $scope.book = {};
   $scope.payment = {};
   $scope.title = 'Book a car';
+    $scope.user = $localStorage.customer;
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
     .filter(x => x.name.startsWith('home.'))

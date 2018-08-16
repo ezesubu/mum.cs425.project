@@ -3,7 +3,7 @@ var angular = require('angular');
 
 require('../css/home.css')
 
-function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, LoginSvc, CarSvc) {
+function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, $localStorage, LoginSvc, CarSvc) {
   $scope.title = 'client';
   $scope.navBar = require('../includes/navbar.html')
   $scope.links = $state.get()
@@ -16,9 +16,9 @@ function homeCtrl($scope, $sessionStorage, $auth, $state, $filter,$uibModal, Log
     });
 
     let promise = CarSvc.fnGetAll();
+    $scope.user = $localStorage.customer;
 
     promise.then(function (objData) {
-        console.log(objData);
       $scope.cars = objData;
     });
 
@@ -73,6 +73,7 @@ homeCtrl.$inject = [
   '$state',
   '$filter',
   '$uibModal',
+  '$localStorage',
   'LoginSvc',
   'CarSvc'
 ]
