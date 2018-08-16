@@ -42,6 +42,7 @@ function addAuthGuard($rootScope, $location, $sessionStorage){
 
 function setDefaults($urlRouterProvider, RestangularProvider,carConstants , $authProvider){
    $urlRouterProvider.otherwise('/home')
+    console.log("base url", carConstants.base_url )
    RestangularProvider.setBaseUrl(carConstants.base_url);
    RestangularProvider.setFullResponse(true);
    $authProvider.loginUrl = carConstants.base_url + '/login';
@@ -61,7 +62,6 @@ importAll(require.context('./directives', false, /\.js$/))
 // routers
 importAll(require.context('./login', false, /.js$/))
 importAll(require.context('./home', true, /.js$/))
-importAll(require.context('./car', true, /.js$/))
 importAll(require.context('./booking', true, /.js$/))
 
 angular.module('car')
